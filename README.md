@@ -1,3 +1,5 @@
+# This is Code is Designed by Anuj Tiwari [26310013] for NeuroAi course Take home assignment 3.
+
 # Designing and Evaluating Cognitive and Language Models
 
 ## Layout
@@ -8,7 +10,6 @@ part1_continuous_agent/      Part 1 - CALM, a continual-learning agent
   calm_agent.py              the agent: associative memory, associability, change detector,
                              Hebbian co-occurrence, episodic replay, curiosity-driven action
   run_experiments.py         7 conditions x 5 seeds -> results/part1, figures
-  draw_architecture.py       architecture diagram
 
 part2_llama_ablation/        Part 2 - ablation study of TinyLlama-1.1B (LLaMA-2 architecture)
   ablation.py                hook-based ablations: heads, attention blocks, MLPs, layers, embeddings
@@ -27,8 +28,8 @@ python -m venv .venv && .venv/Scripts/activate        # Python 3.11
 pip install torch --index-url https://download.pytorch.org/whl/cu126
 pip install -r requirements.txt
 
-cd part1_continuous_agent && python run_experiments.py && python draw_architecture.py   # ~2 min, CPU
-cd ../part2_llama_ablation && python run_ablation.py                                  # GPU
+cd part1_continuous_agent && python run_experiments.py    # ~2 min, CPU
+cd ../part2_llama_ablation && python run_ablation.py      # GPU
 ```
 
 Part 2 downloads `TinyLlama/TinyLlama_v1.1` and the WikiText-2, BLiMP and SST-2 datasets from the

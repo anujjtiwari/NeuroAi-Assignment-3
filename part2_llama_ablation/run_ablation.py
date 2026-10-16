@@ -1,21 +1,3 @@
-"""
-Ablation study on TinyLlama-1.1B (LLaMA-2 architecture: 22 layers x 32 heads,
-grouped-query attention, SwiGLU MLP, RMSNorm, RoPE).
-
-Experiments
-  E0  baseline
-  E1  single-component sweeps: for every layer, (a) skip the whole layer,
-      (b) zero its attention block, (c) zero its MLP
-  E2  progressive attention-head pruning (0-90 % of all 704 heads) in three orders:
-      random, least-important-first, most-important-first (gradient importance)
-  E3  progressive layer removal (0-16 of 22 layers) in four orders:
-      least-important-first (from E1), random, top-down, bottom-up
-  E4  input-embedding corruption: Gaussian noise and token-embedding masking
-  E5  qualitative: greedy generations under increasing ablation
-
-Results are cached in ../results/part2/results.json, so an interrupted run resumes.
-    python run_ablation.py
-"""
 import json
 import os
 import random
